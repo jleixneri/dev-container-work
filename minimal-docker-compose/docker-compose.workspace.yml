@@ -1,0 +1,8 @@
+services:
+  workspace:
+    container_name: devcontainer_schulung_compose_minimal
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - ../../..:/workspaces:cached #bei "workspaceFolder": "/workspaces/dia/devcontainer-workshop/minimal-docker-compose",

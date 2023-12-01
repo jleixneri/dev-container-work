@@ -1,0 +1,9 @@
+services:
+  production:
+    container_name: devcontainer_schulung_compose_minimal_production
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - ../../..:/workspaces:cached
+
