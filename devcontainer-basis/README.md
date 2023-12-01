@@ -12,10 +12,11 @@
 
 VSCode Extensions müssen für den DevContainer erneut installiert werden. 
 
-
 ```
 # Definition vom Workspace Volume im docker-compose file:
 ../../..:/workspaces:cached #bei "workspaceFolder": "/workspaces/folder1/folder2/folder3",
 ../..:/workspaces:cached #bei "workspaceFolder": "/workspaces/folder1/folder2",
 ..:/workspaces:cached #bei "workspaceFolder": "/workspaces/folder1",
 ```
+
+Falls der Container nicht startet, kann man sich den Log ausgeben lassen. `STRG+Control+P` `Devcontainer Developer: Show all Logs`
