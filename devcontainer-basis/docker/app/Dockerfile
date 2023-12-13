@@ -1,16 +1,11 @@
-ARG VERSION
-FROM python:${VERSION}
-
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    # Remove imagemagick due to https://security-tracker.debian.org/tracker/CVE-2019-10131
-    && apt-get purge -y imagemagick imagemagick-6-common 
-
-# Temporary: Upgrade python packages due to https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-40897
-# They are installed by the base image (python) which does not have the patch.
-RUN python3 -m pip install --upgrade setuptools
-
-
+ARG BASE_IMAGE=voestalpine/voestalpine-ubi9:latest
+FROM public-container-catalog.voestalpine.net/${BASE_IMAGE}
 LABEL maintainer="Rene Rieser"
+
+# Packages installieren
+ARG PYTHON_VERION=3
+RUN dnf install -y python${PYTHON_VERION} python${PYTHON_VERION}-devel python${PYTHON_VERION}-pip
+
 USER root
 RUN groupadd -r dia && useradd --no-log-init -r -g dia dia
 
@@ -29,4 +24,5 @@ RUN chown -R dia:dia /app/data
 USER dia
 VOLUME /app/data
 
-CMD ["python","-u","main.py"]
+ENV vers=PYTHON_VERION
+CMD python${vers} -u main.py

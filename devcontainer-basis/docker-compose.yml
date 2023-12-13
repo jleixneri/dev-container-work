@@ -5,8 +5,6 @@ services:
     build:
       context: ./
       dockerfile: ./docker/app/Dockerfile
-      args: # these variables are available on build
-        VERSION: ${PYTHON_IMAGE_VERSION}
     environment: # these variables are available on run
       PRODUCTION: true
     volumes:

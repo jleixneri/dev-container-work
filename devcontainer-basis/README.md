@@ -2,6 +2,7 @@
 
 ## Vorbereitung
 * Workspace-Folder muss vorher definiert werden! Bei WSL ist es `/workspaces/` + `aktueller Pfad`
+* Definition vom workspace volume (siehe unten)
 * DevContainer features müssen von Git geklont werden.
 
 ### Minimalbeispiel.
