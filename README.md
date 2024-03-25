@@ -77,7 +77,7 @@ Beispiele für Development Container mit Visual Studio Code
         ```
     * SSH-Key an den Container übergeben:
         ```
-        touch ~/.profile
+        #Entweder .profile, oder .bashrc, jenachdem was ausgeführt wird, wenn man eine neue Shell aufmacht. => vorher mit ´echo "hi"´ testen...
         nano ~/.profile
         ```
         ```
