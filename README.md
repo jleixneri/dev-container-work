@@ -59,7 +59,7 @@ Beispiele für Development Container mit Visual Studio Code
 
 
 ### SSH-Key für GitLab erstellen
-* Über SSH mit dem Server verbinden (2238asbildki01)
+* Über SSH mit dem Server verbinden 
     * RSA SSH-Key erstellen
         ```
         ssh-keygen
@@ -68,9 +68,9 @@ Beispiele für Development Container mit Visual Studio Code
 * SSH-Key zu dem Gitlab Account hinzufügen
     * Preferences > SSH-Keys > Add an SSH Key > Expiration date hoch setzen...
 
-* Visual Studio Code installiern und mit Server verbinden (2238asbildki01)
+
     * Remote-SSH: Connect to Host
-    * Set GIT username and email locally (on 2238asbildki01)
+    * Set GIT username and email locally 
         ```
         git config --global user.name "Your Name"
         git config --global user.email "your.email@address"
